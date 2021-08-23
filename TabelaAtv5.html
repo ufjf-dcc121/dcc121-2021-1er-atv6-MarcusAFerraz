@@ -54,13 +54,18 @@
     </table>  
 
     <script>
-        const celulas = document.querySelectorAll("td");
+        let celulas = document.querySelectorAll("td");
+
         for(let i = 0; i < celulas.length; i++){
-            const element = celulas[i];;
-            
+            const element = celulas[i];
+            element.addEventListener('click', callback, false);      
             if(!element.classList.contains('orc') && !element.classList.contains('tesouro')&& !element.classList.contains('parede')){
                 element.classList.add('parede');
             }
+        }
+
+        function callback(event){
+            console.log(this.className);
         }
     </script>
 
