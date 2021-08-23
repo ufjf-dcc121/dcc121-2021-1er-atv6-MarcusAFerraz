@@ -66,9 +66,24 @@
 
         function callback(event){
             console.log(this.className);
+            let target = event.target;
+            if(target.classList.contains('parede')){
+                target.classList.remove('parede');
+            }
+            else if (!target.classList.contains('orc') && !target.classList.contains('tesouro')&& !target.classList.contains('parede')){
+                target.classList.add('orc');
+            }
+            else if(target.classList.contains('orc')){
+                target.classList.remove('orc');
+                target.classList.add('tesouro');
+            }
+            else{
+                target.classList.remove('tesouro');
+                target.classList.add('parede');
+            }
+            
         }
     </script>
-
 
 </body>
 </html>
