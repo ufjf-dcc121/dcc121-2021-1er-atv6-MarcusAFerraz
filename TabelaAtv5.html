@@ -57,7 +57,10 @@
         const celulas = document.querySelectorAll("td");
         for(let i = 0; i < celulas.length; i++){
             const element = celulas[i];;
-            element.classList.add('parede');
+            
+            if(!element.classList.contains('orc') && !element.classList.contains('tesouro')&& !element.classList.contains('parede')){
+                element.classList.add('parede');
+            }
         }
     </script>
 
